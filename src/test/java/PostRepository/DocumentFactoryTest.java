@@ -12,12 +12,14 @@ public class DocumentFactoryTest {
 
     @Test
     public void shouldCreateDocumentBasedOnPost() throws Exception {
-        String post = faker.artist().name();
+        String postContent = faker.lordOfTheRings().location();
+        String postTag = faker.artist().name();
 
         DocumentFactory documentFactory = new DocumentFactory();
 
-        Document document = documentFactory.createDocument(post);
+        Document document = documentFactory.createDocument(postContent, postTag);
 
-        assertThat(document.get("content"), equalTo(post));
+        assertThat(document.get("content"), equalTo(postContent));
+        assertThat(document.get("tag"), equalTo(postTag));
     }
 }
