@@ -38,9 +38,13 @@ public class IntegrationTest {
        String tag = faker.artist().name();
        Post post = new Post(content, tag);
 
+
        Document document = documentFactory.createDocument(content, tag);
+       Document documentTwo = documentFactory.createDocument(content, tag);
 
        repository.addPost(document);
+       repository.addPost(documentTwo);
+       writer.close();
        ArrayList<Post> posts =  querier.queryByTag(tag);
 
        assertThat(posts.get(0), equalTo(post));

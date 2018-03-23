@@ -15,6 +15,5 @@ public class PostRepository {
 
     public void addPost(Document doc) throws IOException {
         writer.addDocument(doc);
-        writer.close();
     }
 }
