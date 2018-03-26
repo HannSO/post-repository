@@ -39,8 +39,8 @@ public class IntegrationTest {
        Post post = new Post(content, tag);
 
 
-       Document document = documentFactory.createDocument(content, tag);
-       Document documentTwo = documentFactory.createDocument(content, tag);
+       Document document = documentFactory.createDocument(post);
+       Document documentTwo = documentFactory.createDocument(post);
 
        repository.addPost(document);
        repository.addPost(documentTwo);

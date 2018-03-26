@@ -31,8 +31,17 @@ public class Post {
                 '}';
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
     public Post(String content, String tag) {
         this.content = content;
         this.tag = tag;
+
     }
 }

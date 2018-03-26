@@ -15,9 +15,10 @@ public class DocumentFactoryTest {
         String postContent = faker.lordOfTheRings().location();
         String postTag = faker.artist().name();
 
+        Post post = new Post(postContent, postTag);
         DocumentFactory documentFactory = new DocumentFactory();
 
-        Document document = documentFactory.createDocument(postContent, postTag);
+        Document document = documentFactory.createDocument(post);
 
         assertThat(document.get("content"), equalTo(postContent));
         assertThat(document.get("tag"), equalTo(postTag));

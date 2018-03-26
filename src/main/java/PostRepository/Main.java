@@ -23,6 +23,11 @@ import org.apache.lucene.util.Version;
 
 public class Main {
 
-        public static void main(String[] args) throws IOException, ParseException {}
+        public static void main(String[] args) throws IOException, ParseException {
+            String filePath = args[0];
+            String inputString = new FileReaderWrapper().parse(filePath);
+
+
+        }
 
 }

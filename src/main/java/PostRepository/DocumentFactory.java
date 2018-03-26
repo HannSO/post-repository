@@ -6,10 +6,10 @@ import org.apache.lucene.document.StringField;
 
 public class DocumentFactory {
 
-    public Document createDocument(String content, String tag) {
+    public Document createDocument(Post post) {
         Document document = new Document();
-        document.add(new StringField("content", content, Field.Store.YES));
-        document.add(new StringField("tag", tag, Field.Store.YES));
+        document.add(new StringField("content", post.getContent(), Field.Store.YES));
+        document.add(new StringField("tag", post.getTag(), Field.Store.YES));
         return document;
     }
 }
